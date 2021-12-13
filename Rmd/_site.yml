@@ -1,0 +1,14 @@
+name: "WorkPackages"
+output_dir: "../docs"
+output:
+  html_document:
+    theme: cosmo
+    css: style.css
+    includes:
+      in_header: "favicon.html"
+exclude: ["extras"]
+navbar:
+  title: '<img src="images/workPackagesMini.png" width = 80 height = 17/>'
+  left:
+    - icon: fa-home
+      href: index.html

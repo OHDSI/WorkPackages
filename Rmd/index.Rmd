@@ -1,0 +1,15 @@
+---
+title: 'WorkPackages'
+output: 
+    html_document:
+        toc: TRUE
+        toc_float: TRUE
+        css: hideTitle.css
+---
+<img src="images/bannerWorkPackages.png" alt="WorkPackages" style="vertical-align:top; margin-top: 20px;">
+
+To be written ...
+
+## Available work packages
+
+Please follow this [link](https://data.ohdsi.org/WorkPackages)

@@ -1,0 +1,16 @@
+Package: WorkPackages
+Type: Package
+Title: Work packages for on-boarding OHDSI community members
+Version: 0.0.1
+Author: c(
+  person("Marc A.", "Suchard", , "msuchard@ucla.edu", role = c("aut", "cre")),
+  person("Observational Health Data Science and Informatics", role = c("cph"))
+  )
+Maintainer: Marc A. Suchard <msuchard@ucla.edu>
+Description: A collection of work packages and associated tools for
+  on-boarding OHDSI community members
+License: Apache License 2.0
+URL: https://ohdsi.github.io/WorkPackages/
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
