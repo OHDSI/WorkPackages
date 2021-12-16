@@ -7,6 +7,7 @@
 launchWorkPackageExplorer(
   connectionDetails = NULL,
   databaseSchema = NULL,
+  dataFile = NULL,
   aboutText = NULL,
   runOverNetwork = FALSE,
   port = 80,
@@ -23,6 +24,9 @@ the study results results have been uploaded using the
 \item{databaseSchema}{The schema on the database server where the results
 have been uploaded.}
 
+\item{dataFile}{(Optional) The name of the .RData file with results. It is commonly known as the
+Premerged file.}
+
 \item{runOverNetwork}{(optional) Do you want the app to run over your network?}
 
 \item{port}{(optional) Only used if \code{runOverNetwork} = TRUE.}
@@ -35,4 +39,17 @@ Launch the WorkPackages Shiny app
 }
 \details{
 Launches a Shiny app that allows the user to explore WorkPackages
+}
+\examples{
+connectionDetails <- DatabaseConnector::createConnectionDetails(
+  dbms = "postgresql",
+  server = paste(keyring::key_get("workPackagesServer"),
+              keyring::key_get("workPackagesDatabase"),
+              sep = "/"),
+  user = keyring::key_get("workPackagesReadOnlyUser"),
+  password = keyring::key_get("workPackagesReadOnlyPassword"))
+
+launchWorkPackageExplorer(connectionDetails = connectionDetails,
+                          databaseSchema = paste0(keyring::key_get("workPackagesDatabase"), ".work_packages"))
+
 }

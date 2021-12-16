@@ -32,6 +32,18 @@
 #' @details
 #' Launches a Shiny app that allows the user to explore WorkPackages
 #'
+#' @examples
+#' connectionDetails <- DatabaseConnector::createConnectionDetails(
+#'   dbms = "postgresql",
+#'   server = paste(keyring::key_get("workPackagesServer"),
+#'               keyring::key_get("workPackagesDatabase"),
+#'               sep = "/"),
+#'   user = keyring::key_get("workPackagesReadOnlyUser"),
+#'   password = keyring::key_get("workPackagesReadOnlyPassword"))
+#'
+#' launchWorkPackageExplorer(connectionDetails = connectionDetails,
+#'                           databaseSchema = paste0(keyring::key_get("workPackagesDatabase"), ".work_packages"))
+#'
 #' @export
 launchWorkPackageExplorer <- function(
                                  connectionDetails = NULL,
@@ -51,8 +63,8 @@ launchWorkPackageExplorer <- function(
 
   if (!is.null(connectionDetails)) {
     dataFile <- NULL
-    if (is.null(resultsDatabaseSchema)) {
-      stop("resultsDatabaseSchema is required to connect to the database.")
+    if (is.null(databaseSchema)) {
+      stop("databaseSchema is required to connect to the database.")
     }
   }
 
