@@ -22,9 +22,9 @@ DatabaseConnector::executeSql(connection, "grant select on all tables in schema 
 DatabaseConnector::executeSql(connection, "grant select on all tables in schema work_packages to work_packages_readonly;")
 
 exampleData <- data.frame(
-  package_id = c(1,2,3),
-  text_field = c("Test Text Example 1", "Test Text Example 2", "Test Text Example 3"),
-  another_field = c("Extended text 1", "Extended text 2", "Extended text 3")
+  package_id = c(1,2),
+  text_field = c("Test Text Example 1", "Test Text Example 2"),
+  another_field = c("Extended text 1", "Extended text 2")
 )
 
 DatabaseConnector::insertTable(connection, tableName = "package_descriptions",
